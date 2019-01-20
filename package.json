@@ -5,7 +5,9 @@
 	"main": "app.js",
 	"scripts": {
 		"test": "jest",
-		"start:dev": "nodemon app"
+		"client:dev": "npm start --prefix client",
+		"server:dev": "cross-env NODE_ENV=prod nodemon server/app.js",
+		"start:dev": "concurrently \"npm run server:dev\" \"npm run client:dev\" "
 	},
 	"keywords": [
 		"restful",
@@ -22,6 +24,8 @@
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
 		"body-parser": "^1.18.3",
+		"concurrently": "^4.1.0",
+		"cors": "^2.8.5",
 		"express": "^4.16.4",
 		"express-promise-router": "^3.0.3",
 		"helmet": "^3.15.0",
@@ -35,5 +39,8 @@
 		"passport-google-plus-token": "^2.1.0",
 		"passport-jwt": "^4.0.0",
 		"passport-local": "^1.0.0"
+	},
+	"devDependencies": {
+		"cross-env": "^5.2.0"
 	}
 }
