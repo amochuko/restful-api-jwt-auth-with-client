@@ -10,8 +10,8 @@ const express = require('express'),
 
 const app = express();
 
-app.use(cors());
 app.use(helmet());
+app.use(cors());
 app.use(passport.initialize());
 
 //DB
