@@ -5,9 +5,10 @@
 	"main": "app.js",
 	"scripts": {
 		"test": "jest",
-		"client:dev": "npm start --prefix client",
-		"server:dev": "cross-env NODE_ENV=prod nodemon server/app.js",
-		"start:dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+		"start": "node index.js",
+		"client": "npm start --prefix client",
+		"server": "cross-env NODE_ENV=prod nodemon server/app.js",
+		"dev": "concurrently \"npm run server\" \"npm run client\"",
 		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
 	},
 	"keywords": [
