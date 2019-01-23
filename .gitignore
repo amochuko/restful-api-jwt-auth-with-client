@@ -1,5 +1,6 @@
 # dependencies
 node_module
+/node_modules
 
 #logger
 logger
@@ -12,3 +13,9 @@ private.key
 #test
 test
 jest.config.js
+
+#env
+/*.env
+
+#mis
+.DS_Store
